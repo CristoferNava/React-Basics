@@ -1,8 +1,8 @@
 import React from 'react';
 
-function Header({firstName, lastName}) {
+function Header({title}) {
   return(
-    <h1>Hola {firstName} {lastName} </h1>
+    <h1>{title}</h1>
   );
 }
 
