@@ -2,6 +2,7 @@ import { Fragment, useState } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Product from './components/Product';
+import Cart from './components/Cart';
 
 function App() {
   // products is the state (an array in this case), setProducts is a function that modifies the state
@@ -11,6 +12,8 @@ function App() {
     { id: 2, name: 'Camisa Django', price: 190},
     { id: 3, name: 'Camisa Angular', price: 205},
   ]);
+
+  let [cart, setCart] = useState([]);
   
  
   return (
@@ -24,9 +27,18 @@ function App() {
           <Product 
             key={product.id}
             product={product}
+            products={products}
+            cart={cart}
+            setCart={setCart}
           />
         ))}
         
+        <Cart 
+          cart={cart}
+          products={products}
+          isCart={true}
+          setCart={setCart}
+        />
 
         <Footer />
       </Fragment>
